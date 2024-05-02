@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from django.db import IntegrityError
 from .models import *
 import pandas as pd
+from .serializers import GetBankdetailSerializers
 from django.http import HttpResponse
 
 def Message(request):
@@ -35,5 +36,10 @@ def Message(request):
     return HttpResponse("<h1>DATA CREATED SUCCESSFULLY! Pass the Bank Branch to get details")
 
     
-class GetBankdetailApiView(generics.ListCreateAPIView):
-    pass
+class GetBankdetailApiView(generics.ListAPIView):
+    serializer_class = GetBankdetailSerializers
+
+    def get_queryset(self):
+        bank_branch = self.kwargs['pk']
+        return Bank_branches.objects.filter(Bank_branch=bank_branch)
+    
