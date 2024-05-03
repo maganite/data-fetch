@@ -26,7 +26,7 @@ This project is a Django-based REST API designed to fetch data from a CSV file a
 
 3. **Install Dependencies**
    ```
-   pip install django djangorestframework
+   pip install -r requirements.txt
    ```
 
 4. **Set up the Database**
