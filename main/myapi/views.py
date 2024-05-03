@@ -10,5 +10,5 @@ class GetBankdetailApiView(generics.ListAPIView):
 
     def get_queryset(self):
         bankbranch = self.kwargs['pk']
-        return BankDetail.objects.filter(bank_branch=bankbranch)
+        return BankDetail.objects.filter(bank_branch__icontains=bankbranch)
     
