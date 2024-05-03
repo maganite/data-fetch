@@ -32,6 +32,7 @@ This project is a Django-based REST API designed to fetch data from a CSV file a
 4. **Set up the Database**
    - This project uses SQLite by default. If you want to use another database, configure it in the `settings.py` file.
    ```
+   pyton manage.py makemigrations
    python manage.py migrate
    ```
 
