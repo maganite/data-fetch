@@ -3,5 +3,5 @@ from .models import *
 
 class GetBankdetailSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Bank_branches
+        model = BankDetail
         fields = '__all__'
